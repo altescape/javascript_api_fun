@@ -15,18 +15,18 @@ data: This is a message at time 2016-08-03T15:17:56+0100
 ...
 ```
 
-Every second it will output a segment of data.
+Every second it this script will output an event which is a line of data.
+The default event type is 'message' but here we also have another event called 
+ping and the data it provides is a JSON object containing the current time.
 
-The event is ping and the data is a JSON object containing current time.
-
-For ease enter this into the console, but you can add it anywhere, the key to it all is the `updates.php` source:
+For ease enter following into a dev console, but you can add it anywhere, the key to it all is the `updates.php` source:
 
 ```JavaScript
 let pingHandler = function(e) { console.log(e); }
 let source = new EventSource('updates.php');
 source.addEventListener('ping', pingHandler, false);
 ```
-also provides a method: `onmessage`...
+also provides a method: `onmessage` which listens out for default `message` type...
 
 ```JavaScript
 source.onmessage = function (event) {
