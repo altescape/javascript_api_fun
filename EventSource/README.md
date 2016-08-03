@@ -48,7 +48,7 @@ You would then add:
 source.addEventListener('pong', pongHandler, false);
 ```
 
-and the associated function `pongHandler` obbiously.
+and the associated function `pongHandler` not show here.
 
 
 More info at https://www.w3.org/TR/eventsource/
