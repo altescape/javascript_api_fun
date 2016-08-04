@@ -26,7 +26,7 @@ let pingHandler = function(e) { console.log(e); }
 let source = new EventSource('updates.php');
 source.addEventListener('ping', pingHandler, false);
 ```
-also provides a method: `onmessage` which listens out for default `message` type...
+EventSource provides the method: `onmessage` which will listen out for events that are the default `message` type only, it won't respond to any other named events...
 
 ```JavaScript
 source.onmessage = function (event) {
